@@ -10,6 +10,7 @@ import argparse
 import subprocess
 from string import Template
 import os
+import sys
 
 # Functions
 def gmaps_directions(origin, destination, mode, API_KEY):
@@ -70,6 +71,10 @@ def multimodal_directions(origin, destination, modes, API_KEY):
 
         # Get data from Google Maps Directions API
         data = gmaps_directions(origin, destination, mode, API_KEY)
+
+        # Check to see if no routes returned.
+        if len(data['routes']) == 0:
+            sys.exit("Sorry, directions are not available for {} from {} to {}".format(mode, origin, destination))
 
         # Get duration in seconds
         duration = data['routes'][0]['legs'][0]['duration']['value']
