@@ -6,11 +6,11 @@ A Python and Cesium application for creating 3D animations of multi-modal route 
 
 Download this repository and `cd` into it.
 
-(Optional) If you use anaconda, you create a virtual environment from the `environment.yml` file.
+(Optional) If you use anaconda, you can create a virtual environment from the `environment.yml` file with:
 
 `conda env create -f environment.yml`
 
-You can visualize driving, transit, bicycling and walking directions from an origin to a destination like this:
+Generate directions from origin to destination by driving, transit, bicycling and walking like this:
 
 ```
 python run.py \
@@ -18,3 +18,9 @@ python run.py \
 --destination="Central Park, New York City" \
 --modes="driving,transit,bicycling,walking"
 ```
+
+View your app by navigating to `http://localhost:8000/` in your browser.
+
+Voilà!
+
+[img](https://i.imgur.com/LwygAdH.jpg)
