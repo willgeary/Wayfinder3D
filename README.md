@@ -1,6 +1,8 @@
 # Wayfinder3D
 
-An application for comparing estimated travel times and directions in 3D. Built with Python, CesiumJS and Google Maps API.
+An application for comparing estimated travel times and directions on a 3D map.
+
+Built with Python, CesiumJS and Google Maps API.
 
 ## Setup
 
