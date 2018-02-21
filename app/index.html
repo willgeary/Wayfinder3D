@@ -25,20 +25,52 @@
         shouldAnimate : true
     });
 
-    // Set up camera
-    viewer.scene.camera.setView({
-        destination:  Cesium.Cartesian3.fromDegrees(-73.9, 40.7, 55000),
-        orientation: {
-            heading: 9.5
-        }
-    });
+    var pinBuilder = new Cesium.PinBuilder();
 
     // Load data
     viewer.dataSources.add(Cesium.CzmlDataSource.load('output.czml'));
 
-    // Restart button
-    cesiumContainer.addDefaultToolbarButton('Restart', function() {
-        viewer.dataSources.add(Cesium.CzmlDataSource.load('output.czml'));
+    // Make pins
+    var startPin = viewer.entities.add({
+      position: Cesium.Cartesian3.fromDegrees(-74.0062, 40.71248),
+      billboard: {
+          image: pinBuilder.fromColor(Cesium.Color.FORESTGREEN, 48),
+          verticalOrigin: Cesium.VerticalOrigin.TOP
+          },
+          label: {
+              text: 'New York City',
+              verticalOrigin: Cesium.VerticalOrigin.TOP,
+              horizontalOrigin: Cesium.HorizontalOrigin.RIGHT,
+              font: '20px Helvetica',
+              fillColor: Cesium.Color.WHITE,
+              outlineWidth: 1,
+              style: Cesium.LabelStyle.FILL,
+              pixelOffset: new Cesium.Cartesian2(-25, -25)
+          }
+      });
+
+
+      var endPin = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(-75.1652, 39.95258),
+        billboard: {
+            image: pinBuilder.fromColor(Cesium.Color.CRIMSON, 48),
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM
+            },
+            label: {
+                text: 'Philadelphia',
+                verticalOrigin: Cesium.VerticalOrigin.TOP,
+                horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+                font: '20px Helvetica',
+                fillColor: Cesium.Color.WHITE,
+                outlineWidth: 1,
+                style: Cesium.LabelStyle.FILL,
+                pixelOffset: new Cesium.Cartesian2(25, -25)
+            }
+        });
+
+    //Since some of the pins are created asynchronously, wait for them all to load before zooming/
+    Cesium.when.all([startPin, endPin], function(pins){
+        viewer.zoomTo(pins);
     });
 
   </script>
