@@ -12,7 +12,7 @@ A Python and Cesium application for creating 3D animations of multi-modal route 
 
 `conda env create -f environment.yml`
 
-`source activate wayfinder3D`
+`source activate Wayfinder3D`
 
 You can generate directions from an origin to a destination via four modes: driving, transit, bicycling and walking.
 
