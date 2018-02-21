@@ -2,7 +2,7 @@
 
 A Python and Cesium application for creating 3D animations of multi-modal route recommendations from Google Maps.
 
-## Instructions
+## Setup
 
 `git clone https://github.com/willgeary/Wayfinder3D`
 
@@ -13,6 +13,8 @@ A Python and Cesium application for creating 3D animations of multi-modal route 
 `conda env create -f environment.yml`
 
 `source activate Wayfinder3D`
+
+## Instructions
 
 You can generate directions from an origin to a destination via four modes: driving, transit, bicycling and walking.
 
