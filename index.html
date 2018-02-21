@@ -8,7 +8,7 @@
   <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <title>Wayfinder3D</title>
-  <script src="/Build/Cesium/Cesium.js"></script>
+  <script src="Cesium/Cesium.js"></script>
   <style>
       @import url(/Build/Cesium/Widgets/widgets.css);
       html, body, #cesiumContainer {
@@ -32,13 +32,13 @@
 
     // Make pins
     var startPin = viewer.entities.add({
-      position: Cesium.Cartesian3.fromDegrees(-74.0062, 40.71248),
+      position: Cesium.Cartesian3.fromDegrees(-73.99607, 40.73017),
       billboard: {
           image: pinBuilder.fromColor(Cesium.Color.FORESTGREEN, 48),
           verticalOrigin: Cesium.VerticalOrigin.TOP
           },
           label: {
-              text: 'New York City',
+              text: 'Washington Square Park',
               verticalOrigin: Cesium.VerticalOrigin.TOP,
               horizontalOrigin: Cesium.HorizontalOrigin.RIGHT,
               font: '20px Helvetica',
@@ -51,13 +51,13 @@
 
 
       var endPin = viewer.entities.add({
-        position: Cesium.Cartesian3.fromDegrees(-75.1652, 39.95258),
+        position: Cesium.Cartesian3.fromDegrees(-73.97272, 40.76502),
         billboard: {
             image: pinBuilder.fromColor(Cesium.Color.CRIMSON, 48),
             verticalOrigin: Cesium.VerticalOrigin.BOTTOM
             },
             label: {
-                text: 'Philadelphia',
+                text: 'Central Park',
                 verticalOrigin: Cesium.VerticalOrigin.TOP,
                 horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
                 font: '20px Helvetica',

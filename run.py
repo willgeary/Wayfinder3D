@@ -255,7 +255,6 @@ def generate_cesium(data, modes, starttimes, endtimes, czml):
         # billboard
         eyeOffset = [0.0, 0.0, .0]
         horizontalOrigin = 'CENTER'
-        image = 'https://cdn.pixabay.com/photo/2016/04/20/15/36/bike-1341369_960_720.png'
         pixelOffset = [0.0, 0.0]
         scale = 0.8333333333333334
         show_boolean = True
@@ -300,7 +299,6 @@ def generate_cesium(data, modes, starttimes, endtimes, czml):
                             u'cartesian': eyeOffset
                         },
                     u'horizontalOrigin': u'{}'.format(horizontalOrigin),
-                    u'image': u'{}'.format(image),
                     u'pixelOffset':
                         {
                             u'cartesian2': pixelOffset
@@ -420,7 +418,7 @@ if __name__ == "__main__":
     cesium_scene = generate_cesium(data, modes, starttimes, endtimes, czml)
 
     # Save CZML output
-    outfilename = 'app/output.czml'
+    outfilename = 'output.czml'
     with open(outfilename, 'w') as f:
         json.dump(cesium_scene, f)
 
@@ -436,7 +434,7 @@ if __name__ == "__main__":
     end_lat = data['features'][0]['geometry']['coordinates'][-1][1]
     end_lon = data['features'][0]['geometry']['coordinates'][-1][0]
 
-    with open("app/index.html", "w") as f:
+    with open("index.html", "w") as f:
         f.write(
             s.substitute(
                 START_LAT=start_lat,
@@ -449,6 +447,6 @@ if __name__ == "__main__":
         )
 
     # Run server
-    print("Open your browser to http://localhost:8000/app/")
+    print("Open your browser to http://localhost:8000/")
     bashCommand = "python3 -m http.server"
     output = subprocess.check_output(['bash','-c', bashCommand])
