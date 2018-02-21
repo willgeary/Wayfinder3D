@@ -4,7 +4,9 @@ A Python and Cesium application for creating 3D animations of multi-modal route 
 
 ## Instructions
 
-Download this repository and `cd` into it.
+`git clone https://github.com/willgeary/Wayfinder3D`
+
+`cd Wayfinder3D`
 
 (Optional) If you use anaconda, you can create and activate a virtual environment from the `environment.yml` file with:
 
