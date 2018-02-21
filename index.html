@@ -28,7 +28,7 @@
     var pinBuilder = new Cesium.PinBuilder();
 
     // Load data
-    viewer.dataSources.add(Cesium.CzmlDataSource.load('output.czml'));
+    viewer.dataSources.add(Cesium.CzmlDataSource.load('data.czml'));
 
     // Make pins
     var startPin = viewer.entities.add({
@@ -38,7 +38,7 @@
           verticalOrigin: Cesium.VerticalOrigin.TOP
           },
           label: {
-              text: 'Washington Square Park',
+              text: 'Washington Square Park, New York City',
               verticalOrigin: Cesium.VerticalOrigin.TOP,
               horizontalOrigin: Cesium.HorizontalOrigin.RIGHT,
               font: '20px Helvetica',
@@ -57,7 +57,7 @@
             verticalOrigin: Cesium.VerticalOrigin.BOTTOM
             },
             label: {
-                text: 'Central Park',
+                text: 'Central Park, New York City',
                 verticalOrigin: Cesium.VerticalOrigin.TOP,
                 horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
                 font: '20px Helvetica',
