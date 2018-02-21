@@ -40,7 +40,7 @@ Should you want to later delete the virtual environment, you can do so with:
 
 MIT License
 
-Copyright (c) 2018 William Geary
+Copyright (c) 2018 Will Geary
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
