@@ -23,4 +23,4 @@ View your app by navigating to `http://localhost:8000/` in your browser.
 
 Voilà!
 
-[img](https://i.imgur.com/LwygAdH.jpg)
+![img](https://i.imgur.com/LwygAdH.jpg)
