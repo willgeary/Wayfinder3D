@@ -1,6 +1,6 @@
 # Wayfinder3D
 
-A Python and Cesium application for creating 3D animations of multi-modal route recommendations from Google Maps.
+A little application made with Python 3 and [CesiumJS](https://cesiumjs.org/) for creating 3D animations of multi-modal route recommendations from Google Maps.
 
 ## Instructions
 
