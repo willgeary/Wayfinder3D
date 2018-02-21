@@ -12,8 +12,10 @@ Download this repository and `cd` into it.
 
 You can visualize driving, transit, bicycling and walking directions from an origin to a destination like this:
 
-`python run.py --origin="Washington Square Park, New York City" \
+`python run.py \
+
+               --origin="Washington Square Park, New York City" \
 
                --destination="Central Park, New York City" \
-               
+
                --modes="driving,transit,bicycling,walking"`
