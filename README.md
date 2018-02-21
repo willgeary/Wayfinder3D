@@ -1,6 +1,6 @@
 # Wayfinder3D
 
-A Python and Cesium application for creating 3D animations of multi-modal route recommendations from Google Maps.
+An application for comparing estimated travel times and directions in 3D. Built with Python, CesiumJS and Google Maps API.
 
 ## Setup
 
@@ -16,7 +16,7 @@ A Python and Cesium application for creating 3D animations of multi-modal route 
 
 ## Instructions
 
-You can generate directions from an origin to a destination via four modes: driving, transit, bicycling and walking.
+You can generate directions from an origin to a destination via four modes: driving, transit, bicycling and walking like this:
 
 ```
 python run.py \
@@ -31,9 +31,24 @@ Voilà!
 
 ![img](https://i.imgur.com/LwygAdH.jpg)
 
+
+If you only want to view select modes, such as driving and transit, you can do so like this:
+
+```
+python run.py \
+--origin="Rome" \
+--destination="Paris" \
+--modes="driving,transit"
+```
+
+When you are done with the virtual environment, you can deactivate it with:
+
+`source deactivate`
+
 Should you want to later delete the virtual environment, you can do so with:
 
 `conda env remove --name Wayfinder3D`
+
 
 
 ## License
