@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Use correct character set. -->
+  <meta charset="utf-8">
+  <!-- Tell IE to use the latest, best version. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Wayfinder3D</title>
+  <script src="/Build/Cesium/Cesium.js"></script>
+  <style>
+      @import url(/Build/Cesium/Widgets/widgets.css);
+      html, body, #cesiumContainer {
+          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+      }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+
+    // Initialize viewer
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+        shouldAnimate : true
+    });
+
+    var pinBuilder = new Cesium.PinBuilder();
+
+    // Load data
+    viewer.dataSources.add(Cesium.CzmlDataSource.load('output.czml'));
+
+    // Make pins
+    var startPin = viewer.entities.add({
+      position: Cesium.Cartesian3.fromDegrees(${START_LON}, ${START_LAT}),
+      billboard: {
+          image: pinBuilder.fromColor(Cesium.Color.FORESTGREEN, 48),
+          verticalOrigin: Cesium.VerticalOrigin.BOTTOM
+          },
+          label: {
+              text: '${ORIGIN}',
+              verticalOrigin: Cesium.VerticalOrigin.TOP,
+              horizontalOrigin: Cesium.HorizontalOrigin.RIGHT,
+              font: '20px Helvetica',
+              fillColor: Cesium.Color.WHITE,
+              outlineWidth: 1,
+              style: Cesium.LabelStyle.FILL
+          }
+      });
+
+
+      var endPin = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(${END_LON}, ${END_LAT}),
+        billboard: {
+            image: pinBuilder.fromColor(Cesium.Color.CRIMSON, 48),
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM
+            },
+            label: {
+                text: '${DESTINATION}',
+                verticalOrigin: Cesium.VerticalOrigin.TOP,
+                horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+                font: '20px Helvetica',
+                fillColor: Cesium.Color.WHITE,
+                outlineWidth: 1,
+                style: Cesium.LabelStyle.FILL
+            }
+        });
+
+    //Since some of the pins are created asynchronously, wait for them all to load before zooming/
+    Cesium.when.all([startPin, endPin], function(pins){
+        viewer.zoomTo(pins);
+    });
+
+  </script>
+</body>
+</html>
