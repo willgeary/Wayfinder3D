@@ -28,3 +28,7 @@ View your app by navigating to [http://localhost:8000/](http://localhost:8000/) 
 Voilà!
 
 ![img](https://i.imgur.com/LwygAdH.jpg)
+
+Should you want to delete the virtual environment, you can do so with:
+
+`conda env remove --name Wayfinder3D`
