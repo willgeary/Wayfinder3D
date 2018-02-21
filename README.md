@@ -23,7 +23,7 @@ python run.py \
 --modes="driving,transit,bicycling,walking"
 ```
 
-View your app by navigating to ![](http://localhost:8000/)` in your browser.
+View your app by navigating to [http://localhost:8000/](http://localhost:8000/) in your browser.
 
 Voilà!
 
