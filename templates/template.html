@@ -35,7 +35,7 @@
       position: Cesium.Cartesian3.fromDegrees(${START_LON}, ${START_LAT}),
       billboard: {
           image: pinBuilder.fromColor(Cesium.Color.FORESTGREEN, 48),
-          verticalOrigin: Cesium.VerticalOrigin.BOTTOM
+          verticalOrigin: Cesium.VerticalOrigin.TOP
           },
           label: {
               text: '${ORIGIN}',
@@ -44,7 +44,8 @@
               font: '20px Helvetica',
               fillColor: Cesium.Color.WHITE,
               outlineWidth: 1,
-              style: Cesium.LabelStyle.FILL
+              style: Cesium.LabelStyle.FILL,
+              pixelOffset: new Cesium.Cartesian2(-25, -25)
           }
       });
 
@@ -62,7 +63,8 @@
                 font: '20px Helvetica',
                 fillColor: Cesium.Color.WHITE,
                 outlineWidth: 1,
-                style: Cesium.LabelStyle.FILL
+                style: Cesium.LabelStyle.FILL,
+                pixelOffset: new Cesium.Cartesian2(25, -25)
             }
         });
 
