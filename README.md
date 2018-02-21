@@ -56,8 +56,11 @@ You can force the camera to follow a particular mode by selecting the mode label
 ![img](https://i.imgur.com/oxQd01T.jpg)
 
 
+### Closing the app
 
-When you are done with the virtual environment, you can deactivate it with:
+You can terminate the local server with control + C or by closing the command line.
+
+If you used a virtual environment, you can deactivate it with:
 
 `source deactivate`
 
@@ -66,4 +69,8 @@ Should you want to later delete the virtual environment, you can do so with:
 `conda env remove --name Wayfinder3D`
 
 
+### License
+
 Copyright (c) 2018 Will Geary
+
+You are free to use this code however you want. If you do use it and like it please let me know!
