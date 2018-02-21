@@ -33,7 +33,6 @@ Voilà!
 
 ![img](https://i.imgur.com/LwygAdH.jpg)
 
-
 If you only want to view select modes, such as driving and transit, you can do so like this:
 
 ```
@@ -43,6 +42,20 @@ python run.py \
 --modes="driving,transit"
 ```
 ![img](https://i.imgur.com/S8e4hIx.jpg)
+
+### Basemaps
+
+You can select from Cesium's built in collection of basemaps by clicking on the imagery icon in the upper right corner:
+
+![img](https://i.imgur.com/45QDYBe.jpg)
+
+### Camera
+
+You can force the camera to follow a particular mode by selecting the mode label and clicking the camera icon in the upper right.
+
+![img](https://i.imgur.com/BDfsiO2.jpg)
+
+
 
 When you are done with the virtual environment, you can deactivate it with:
 
