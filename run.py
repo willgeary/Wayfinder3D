@@ -418,7 +418,7 @@ if __name__ == "__main__":
     cesium_scene = generate_cesium(data, modes, starttimes, endtimes, czml)
 
     # Save CZML output
-    outfilename = 'output.czml'
+    outfilename = 'data.czml'
     with open(outfilename, 'w') as f:
         json.dump(cesium_scene, f)
 
