@@ -1,4 +1,3 @@
-
 # Import Libraries
 import numpy as np
 import math
@@ -12,8 +11,12 @@ from string import Template
 import os
 import sys
 
-# Functions
+# Utility functions
 def gmaps_directions(origin, destination, mode, API_KEY):
+    """
+    Inputs: origin, destination, travel mode, Google Maps Directions API Key
+    Outputs: JSON response containing polyline
+    """
     template = "https://maps.googleapis.com/maps/api/directions/json?origin={}&destination={}&mode={}&key={}"
     url = template.format(origin, destination, mode, API_KEY)
     response = requests.get(url)
@@ -28,15 +31,9 @@ def decode_polyline(polyline_str):
     index, lat, lng = 0, 0, 0
     coordinates = []
     changes = {'latitude': 0, 'longitude': 0}
-
-    # Coordinates have variable length when encoded, so just keep
-    # track of whether we've hit the end of the string. In each
-    # while loop iteration, a single coordinate is decoded.
     while index < len(polyline_str):
-        # Gather lat/lon changes, store them in a dictionary to apply them later
         for unit in ['latitude', 'longitude']:
             shift, result = 0, 0
-
             while True:
                 byte = ord(polyline_str[index]) - 63
                 index+=1
@@ -44,17 +41,13 @@ def decode_polyline(polyline_str):
                 shift += 5
                 if not byte >= 0x20:
                     break
-
             if (result & 1):
                 changes[unit] = ~(result >> 1)
             else:
                 changes[unit] = (result >> 1)
-
         lat += changes['latitude']
         lng += changes['longitude']
-
         coordinates.append((lng / 100000.0, lat / 100000.0))
-
     return coordinates
 
 def multimodal_directions(origin, destination, modes, API_KEY):
@@ -415,7 +408,6 @@ if __name__ == "__main__":
     print("Getting directions from Google Maps")
     data, durations, starttimes, endtimes = multimodal_directions(origin, destination, modes, key)
 
-    print("Converting 2D to 3D")
     cartesian = geojson2cartesian(data)
 
     print("Generating Cesium scene")
