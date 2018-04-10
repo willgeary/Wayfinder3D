@@ -1,4 +1,4 @@
-name: wayfinder3D
+name: Wayfinder3D
 channels:
   - conda-forge
   - anaconda
