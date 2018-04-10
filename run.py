@@ -1,5 +1,4 @@
 # Import Libraries
-import numpy as np
 import math
 from datetime import datetime, date, time, timedelta
 from geojson import Feature, Point, LineString, FeatureCollection
@@ -133,7 +132,7 @@ def LLA2ECEF(latitude,longitude,altitude):
     # WGS84 ellipsoid constants Radius
     # http://stackoverflow.com/questions/16614057/longitude-latitude-altitude-to-3d-cartesian-coordinate-systems
     """
-    a = np.float64(6378137)
+    a = float(6378137)
     e = 8.1819190842622 * 10**(-2)
 
     asq = math.pow(a, 2)
@@ -143,7 +142,7 @@ def LLA2ECEF(latitude,longitude,altitude):
     lon = math.radians(longitude)
     alt = altitude
 
-    N = a / np.sqrt(1 - esq * math.pow(math.sin(lat), 2))
+    N = a / math.sqrt(1 - esq * math.pow(math.sin(lat), 2))
 
     x = (N + alt) * math.cos(lat) * math.cos(lon)
     y = (N + alt) * math.cos(lat) * math.sin(lon)
