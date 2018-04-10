@@ -401,7 +401,7 @@ if __name__ == "__main__":
     parser.add_argument("--origin", help="Origin")
     parser.add_argument("--destination", help="Destination")
     parser.add_argument("--modes", help="Driving, Transit, Bicycling or Walking", default="driving, transit, bicycling, walking")
-    parser.add_argument("--key", help="Google Maps Directions API Key", default='AIzaSyC2dX9jXmdYtYYdNOxu6CLoKYUIXb2IN2Y')
+    parser.add_argument("--key", help="Google Maps Directions API Key", default='AIzaSyDpALFRk5IfEq7RgPZOgBJGGus8bZP_--Q')
 
     args = parser.parse_args()
 
