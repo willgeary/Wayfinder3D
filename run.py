@@ -1,3 +1,7 @@
+# Wayfinder 3D
+# Will Geary
+# https://github.com/willgeary/Wayfinder3D
+
 # Import Libraries
 import math
 from datetime import datetime, date, time, timedelta
