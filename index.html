@@ -10,7 +10,7 @@
   <title>Wayfinder3D</title>
   <script src="Cesium/Cesium.js"></script>
   <style>
-      @import url(/Build/Cesium/Widgets/widgets.css);
+      @import url(/Cesium/Widgets/widgets.css);
       html, body, #cesiumContainer {
           width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
       }
@@ -32,7 +32,7 @@
 
     // Make pins
     var startPin = viewer.entities.add({
-      position: Cesium.Cartesian3.fromDegrees(-73.99607, 40.73017),
+      position: Cesium.Cartesian3.fromDegrees(-73.99701, 40.73143),
       billboard: {
           image: pinBuilder.fromColor(Cesium.Color.FORESTGREEN, 48),
           verticalOrigin: Cesium.VerticalOrigin.TOP
@@ -51,7 +51,7 @@
 
 
       var endPin = viewer.entities.add({
-        position: Cesium.Cartesian3.fromDegrees(-73.97272, 40.76502),
+        position: Cesium.Cartesian3.fromDegrees(-73.98127, 40.76899),
         billboard: {
             image: pinBuilder.fromColor(Cesium.Color.CRIMSON, 48),
             verticalOrigin: Cesium.VerticalOrigin.BOTTOM
