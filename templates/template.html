@@ -19,6 +19,10 @@
 <body>
   <div id="cesiumContainer"></div>
   <script>
+    
+    // Set Bing Maps API key
+    myKey = "At2y8wTp7i2xyPBsYXYUHrLOk-ZOmQMiT7-JTU140HRP_9exxYuA4DIZIhK_NxzU";
+    Cesium.BingMapsApi.defaultKey = myKey;
 
     // Initialize viewer
     var viewer = new Cesium.Viewer('cesiumContainer', {
