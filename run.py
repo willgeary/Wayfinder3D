@@ -3,6 +3,7 @@
 # https://github.com/willgeary/Wayfinder3D
 
 # Import Libraries
+from __future__ import print_function
 import math
 from datetime import datetime, date, time, timedelta
 from geojson import Feature, Point, LineString, FeatureCollection
@@ -449,6 +450,12 @@ if __name__ == "__main__":
                 DESTINATION=destination
             )
         )
+
+    # Print trip details
+    print("Departure time:", departure_time.strftime('%Y-%m-%d %H:%M:%S'))
+    print("Origin:", origin)
+    print("Destination:", destination)
+    print("Modes:", modes)
 
     # Run server
     print("Open your browser to http://localhost:8000/")
