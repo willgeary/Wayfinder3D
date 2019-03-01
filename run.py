@@ -20,7 +20,8 @@ def gmaps_directions(origin, destination, mode, API_KEY):
     Inputs: origin, destination, travel mode, Google Maps Directions API Key
     Outputs: JSON response containing polyline
     """
-    template = "https://maps.googleapis.com/maps/api/directions/json?origin={}&destination={}&mode={}&key={}"
+    template = "https://maps.googleapis.com/maps/api/directions/json?origin={}&destination={}&mode={}&key={}&departure_time=now"
+
     url = template.format(origin, destination, mode, API_KEY)
     response = requests.get(url)
     data = response.json()
@@ -73,7 +74,10 @@ def multimodal_directions(origin, destination, modes, API_KEY):
             sys.exit("Sorry, directions are not available for {} from {} to {}".format(mode, origin, destination))
 
         # Get duration in seconds
-        duration = data['routes'][0]['legs'][0]['duration']['value']
+        if 'duration_in_traffic' in data['routes'][0]['legs'][0]:
+            duration = data['routes'][0]['legs'][0]['duration_in_traffic']['value']
+        else:
+            duration = data['routes'][0]['legs'][0]['duration']['value']
 
         # Calculate arrival time
         arrival_time = departure_time + timedelta(0, duration)
